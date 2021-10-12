@@ -24,4 +24,4 @@ jobs:
     - name: Build Web
       run: dotnet build --configuration release apis/poi/web/poi.csproj
     - name: Test
-      run: dotnet test -v normal apis/poi/tests/IntegrationTests/IntegrationTests.csproj
+      run: dotnet test --v normal apis/poi/tests/IntegrationTests/IntegrationTests.csproj
