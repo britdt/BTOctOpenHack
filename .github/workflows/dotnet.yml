@@ -14,9 +14,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
-      uses: actions/setup-dotnet@v1.8.2
+      uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '3.1.20'
+        dotnet-version: 5.0.x
     - name: Restore dependencies
       run: dotnet restore apis/poi/web/poi.csproj
     - name: Build Test
@@ -24,4 +24,4 @@ jobs:
     - name: Build Web
       run: dotnet build --configuration release apis/poi/web/poi.csproj
     - name: Test
-      run: dotnet test -v normal apis/poi/tests/UnitTests/UnitTests.csproj
+      run: dotnet test -v normal apis/poi/tests/IntegrationTests/IntegrationTests.csproj
